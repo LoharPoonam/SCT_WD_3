@@ -72,8 +72,11 @@ body {
 .choice-text {
     margin: 0 10px; 
     font-size: 1.2em; 
-    color: var(--white); 
-    
+    color: var(--bg-gradient-color-dark); 
+    font-weight: 900;
+    background-color: lavender;
+    border-radius: 20px;
+    padding: 1px;
 }
 
 #xPlayerDisplay, #yPlayerDisplay {
