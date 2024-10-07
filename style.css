@@ -1,0 +1,135 @@
+:root {
+    --box-color: #bfadf5;
+    --box-winning: #686597;
+    --box-color-selected: #9d7ae9;
+    --box-player-option: #201633;
+    --box-gradient-color-dark: #53407B;
+    --box-gradient-color-light: #81759C;
+    --bg-gradient-color-dark: #0D0914;
+    --bg-gradient-color-light: #290A3C;
+    --white: #EFE4F7;
+    --x-color: #061036;
+    --o-color: #443355d2;
+    --box-size: 90px;
+    --box-font-size: 36px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("task3bgimg.png"), linear-gradient(var(--bg-gradient-color-dark), var(--bg-gradient-color-light));
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--white);
+    height: 100vh;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.restartBtn {
+    border: 2px outset;
+    border-radius: 50px;
+    border-color: rgb(161, 167, 234);
+    box-shadow: 5px 5px 10px rgba(135, 135, 182, 0.8);
+    padding: 12px;
+    width: 120px;
+    font-size: 1.1em;
+    font-family: cursive;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-weight: bold;
+    background: linear-gradient(to left, rgb(134, 134, 252), rgb(172, 172, 252), rgb(220, 220, 254));
+    color: #333;
+    margin-left: 90px;
+    margin-top: 30px;
+}
+
+#titleHeader{
+    margin-left: 80px;
+    color:#0D0914;
+    font-weight:900;
+    background-color: lavender;
+    width: 20vh;
+    text-align: center;
+    font-family:cursive;
+    border-radius: 30px;
+
+}
+
+.restartBtn:hover {
+    box-shadow: 5px 5px 12px rgb(12, 12, 68);
+    background: linear-gradient(to left, rgb(55, 55, 94), rgb(82, 87, 149), rgb(55, 55, 138));
+    transform: scale(1.1);
+}
+
+
+.player-selection {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.choice-text {
+    margin: 0 10px; 
+    font-size: 1.2em; 
+    color: var(--white); 
+    
+}
+
+#xPlayerDisplay, #yPlayerDisplay {
+    cursor: pointer;
+    background-color: var(--box-player-option);
+    border-radius: 20px;
+    padding: 10px 5px;
+    font-size: 1.5em;
+    color: var(--white);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 60px; 
+    text-align: center; 
+}
+
+#xPlayerDisplay:hover, #yPlayerDisplay:hover {
+    background: linear-gradient(to bottom, var(--box-gradient-color-dark), var(--box-gradient-color-light));
+    transform: scale(1.1);
+}
+
+.cell {
+    width: var(--box-size);
+    height: var(--box-size);
+    background-color: var(--box-color);
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--box-font-size);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cell:hover {
+    background-color: var(--box-color-selected);
+    transform: scale(1.05);
+}
+
+.xPlayerDisplay {
+    color: var(--x-color);
+}
+
+.yPlayerDisplay {
+    color: var(--o-color);
+}
+
+.winning-cell {
+    background-color: var(--box-winning) !important;
+    transform: scale(1.15);
+    box-shadow: 0 0 12px var(--box-winning);
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 300px; 
+    margin: 0 auto;
+}
